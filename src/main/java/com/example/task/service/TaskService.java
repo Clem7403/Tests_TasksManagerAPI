@@ -1,5 +1,6 @@
 package com.example.task.service;
 
+import com.example.task.model.Task;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class TaskService {
 
 
         //Ajout d'une tâche
-        public Task addTAsk(String description){
+        public Task addTask(String description){
             Task newTask = new Task(description);
             tasks.add(newTask);
             return newTask;

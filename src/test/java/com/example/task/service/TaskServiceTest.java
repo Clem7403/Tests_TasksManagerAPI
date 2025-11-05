@@ -1,5 +1,6 @@
 package com.example.task.service;
 
+import com.example.task.model.Task;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,7 @@ public class TaskServiceTest {
 
     @Test
     void testAddTask(){
-        Task task = taskService.addTAsk("TestAjoutTache");
+        Task task = taskService.addTask("TestAjoutTache");
 
         assertEquals(1, taskService.getAllTasks().size()); //La liste contient 1 tâche
         assertEquals("TestAjoutTache", task.getDescription());
@@ -26,7 +27,7 @@ public class TaskServiceTest {
 
     @Test
     void testRemoveTask(){
-        Task task = taskService.addTAsk("TestRemove");
+        Task task = taskService.addTask("TestRemove");
 
         boolean removed = taskService.removeTask(task.getId());
 
@@ -39,7 +40,7 @@ public class TaskServiceTest {
 
     @Test
     void testMarkAsDone(){
-        Task task = taskService.addTAsk("TestTerminerTache");
+        Task task = taskService.addTask("TestTerminerTache");
 
         boolean done = taskService.markTaskAsDone(task.getId());
 
@@ -52,8 +53,8 @@ public class TaskServiceTest {
 
     @Test
     void testGetAllTasks(){
-        taskService.addTAsk("TestAjoutTache1");
-        taskService.addTAsk("TestAjoutTache2");
+        taskService.addTask("TestAjoutTache1");
+        taskService.addTask("TestAjoutTache2");
 
         assertEquals(2, taskService.getAllTasks().size());
     }

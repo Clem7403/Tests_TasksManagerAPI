@@ -1,4 +1,4 @@
-package com.example.task.service;
+package com.example.task.model;
 
 public class Task {
 
@@ -14,8 +14,9 @@ public class Task {
 
     public Task(String description){
         this.id = idCounter++;
-        this.status = Status.EN_COURS;
         this.description = description;
+        this.status = Status.EN_COURS;
+
     }
 
     public int getId(){
